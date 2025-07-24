@@ -1,0 +1,29 @@
+{
+  "name": "@gemical/api",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "targets": {
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@gemical/api:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@gemical/api:build:development"
+          },
+          "production": {
+            "buildTarget": "@gemical/api:build:production"
+          }
+        }
+      }
+    }
+  }
+}
